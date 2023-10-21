@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>coba</title>
+	<style type="text/css">
+		#moving{
+			position: absolute;
+			top: 5%;
+			left: -2px;
+			white-space: nowrap;
+			animation: moveText 5s linear infinite;
+		}
+		.pause{
+			animation-play-state: paused;
+		}
+		@keyframes moveText{
+			to{
+				left: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+<div id="moving">BelialFauza</div>
+<script type="text/javascript">
+	const moveText = document.getElementByid('moving');
+	let textIndex = 0;
+	const texts = ['Teks Bergerak', 'Animasi Tekstual', 'Dengan javascript'];
+
+	function changeText(){
+		moveText.textContent = texts[textIndex];
+		textIndex = (textIndex + 1) % texts.length;
+	}
+
+	setInterval(changeText, 50000);
+</script>
+</body>
+</html>
